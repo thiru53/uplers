@@ -6,7 +6,7 @@ package javas;
  * Each node in the BST has an integer value, a left child node, and a right child node. A node is considered a valid BST node if it satisfies the following conditions: its value is strictly greater than the values of all nodes to its left, its value is less than or equal to the values of all nodes to its right, and its children nodes are either valid BST nodes themselves or null/None.
  *
  * Sample Input
- * tree =   10
+ * tree =        10
  *            /     \
  *           5      15
  *         /   \   /   \
