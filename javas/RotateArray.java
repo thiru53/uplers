@@ -7,12 +7,18 @@ public class RotateArray {
 
         int[] array = {1,2,3,4,5,6,7};
         // is rotated to [5,6,7,1,2,3,4].
-        int noOfElements = 4;
-        rotateArrayRightUsingLoops1(array, noOfElements, "L");
-        rotateArrayRightUsingLoops2(array, noOfElements, "L");
+        int noOfElements = 29;
+        rotateArrayRightUsingLoops1(array, noOfElements);
+        rotateArrayRightUsingLoops2(array, noOfElements);
+        rotateArrayLeft(array, noOfElements);
     }
 
-    private static void rotateArrayRightUsingLoops1(int[] actual, int noOfElements, String direction) {
+    private static void rotateArrayRightUsingLoops1(int[] actual, int noOfElements) {
+
+        if( noOfElements > actual.length) {
+            noOfElements = noOfElements % actual.length;
+        }
+
         int[] newArray = new int[actual.length];
 
         for(int i= 0; i < noOfElements; i++){
@@ -25,7 +31,10 @@ public class RotateArray {
         System.out.println("Response-1 : "+ Arrays.toString(newArray));
     }
 
-    private static void rotateArrayRightUsingLoops2(int[] actual, int noOfElements, String direction) {
+    private static void rotateArrayRightUsingLoops2(int[] actual, int noOfElements) {
+
+        noOfElements = ( noOfElements > actual.length) ? noOfElements % actual.length : noOfElements;
+
         int[] newArray = new int[actual.length];
 
         int i=0;
@@ -39,7 +48,20 @@ public class RotateArray {
     }
 
 
-    private static void rotateArrayLeft() {
+    private static void rotateArrayLeft(int[] actual , int noOfElements) {
+
+        noOfElements = ( noOfElements > actual.length) ? noOfElements % actual.length : noOfElements;
+
+        int[] newArray = new int[actual.length];
+
+        int i = 0;
+        for (int j = noOfElements; j < actual.length; j++){
+            newArray[i++]=actual[j];
+        }
+        for (int j = 0; j < noOfElements; j++){
+            newArray[i++]=actual[j];
+        }
+        System.out.println("Response-3 : "+ Arrays.toString(newArray));
 
     }
 }
