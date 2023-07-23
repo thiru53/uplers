@@ -9,13 +9,15 @@ public class NthFibonacci {
     }
 
     public static int getNthFibonacciUsingLoops(int n) {
-        int a = 0;
-        int b = 1;
-        int c = 0;
 
         if(n < 3){
             return n-1;
         }
+
+        int a = 0;
+        int b = 1;
+        int c = 0;
+
         for(int i=3; i<=n; i++){
             c = a+b;
             a=b;
