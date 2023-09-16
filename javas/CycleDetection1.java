@@ -12,31 +12,31 @@ public class CycleDetection1 {
         int[] A1 = {1, 3, 2, 4};
         int[] A2 = {4, 1, 3, 2};
 
-        System.out.println("A : isCycle : " + solution(A1, A2));
+        System.out.println("A : isCycle : " + solution1(A1, A2));
 
         int[] B1 = {1, 2, 3, 4};
         int[] B2 = {2, 1, 4, 3};
-        System.out.println("B : isCycle : "+solution(B1, B2));
+        System.out.println("B : isCycle : "+solution1(B1, B2));
 
         int[] C1 = {3, 1, 2};
         int[] C2 = {2, 3, 1};
-        System.out.println("C : isCycle : "+solution(C1, C2));
+        System.out.println("C : isCycle : "+solution1(C1, C2));
 
         int[] D1 = {1, 2, 3, 4};
         int[] D2 = {2, 1, 4, 3};
-        System.out.println("D : isCycle : "+solution(D1, D2));
+        System.out.println("D : isCycle : "+solution1(D1, D2));
 
         int[] E1 = {1, 2, 2, 3, 3};
         int[] E2 = {2, 3, 3, 4, 5};
-        System.out.println("E : isCycle : "+solution(E1, E2));
+        System.out.println("E : isCycle : "+solution1(E1, E2));
 
         int[] F1 = {1,2,1};
         int[] F2 = {2, 3, 3};
-        System.out.println("E : isCycle : "+solution(F1, F2));
+        System.out.println("E : isCycle : "+solution1(F1, F2));
 
         int[] G1 = {1, 2, 3, 4};
         int[] G2 = {2, 1, 4, 4};
-        System.out.println("D : isCycle : "+solution(G1, G2));
+        System.out.println("D : isCycle : "+solution1(G1, G2));
 
 
     }
@@ -60,6 +60,19 @@ public class CycleDetection1 {
 
         return visited.size() == length;
 
+    }
+
+    public static boolean solution1(int[] A, int[] B) {
+
+        if(A[A.length-1] != B[0]) {
+            return false;
+        }
+        for(int i=0; i < A.length-1; i++) {
+            if(A[i] != B[i+1]) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
